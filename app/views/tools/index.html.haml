@@ -1,0 +1,17 @@
+.jumbotron
+  .container
+    %h1.text-center Tool Buddy
+    %h2.text-center Your Tool Install Homie
+
+.container
+  .panel-group#accordion{role: 'tablist',  'aria-multiselectable' => 'true'}
+    - @tools.each do |tool|
+      .panel.panel-default
+        .panel-heading{ id: "heading-#{tool.id}", role: 'tab'}
+          %h4.panel-title 
+            .a{ 'data-toggle' => "collapse",  'data-parent' => "#accordion",  href: "#collapse-#{tool.id}", 'aria-expanded' => "true", 'aria-controls' => "collapse-#{tool.id}"}
+              = tool.name 
+        .panel-collapse.collapse{ id: "collapse-#{tool.id}", role: "tabpanel", 'aria-labelledby' => "heading-#{tool.id}" }
+          .panel-body
+            = link_to 'add_version', new_tool_version_path(tool)
+
