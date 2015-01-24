@@ -1,0 +1,4 @@
+%table.table
+  = render partial: 'version_table_header'
+  - versions.each do |version|
+    = render partial: 'version_table_row', locals: { version: version }

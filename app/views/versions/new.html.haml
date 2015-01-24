@@ -1,0 +1,11 @@
+%h1 Create new tool version
+
+= form_for([@tool, @version]) do |f|
+  %p
+    = f.label :name
+    = f.text_field :name
+  %p
+    = f.label :release_notes
+    = f.text_area :release_notes
+  %p
+    = f.submit
