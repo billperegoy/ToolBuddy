@@ -15,6 +15,10 @@ class VersionsController < ApplicationController
     end
   end
 
+  def show
+    @version = Version.find(params[:id])
+  end
+
   private
   def version_params
     params.require(:version).permit(:name, :release_notes)

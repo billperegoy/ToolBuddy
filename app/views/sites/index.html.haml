@@ -1,0 +1,15 @@
+
+= button_to "Home", tools_path, method: 'get', class: 'btn btn-primary'
+= button_to "Add Site", new_site_path, method: 'get', class: 'btn btn-primary'
+%h1 All Sites
+%table.table.table-striped.table-border
+  %tr
+    %th Site Name
+    %th Host
+    %th Install Path
+  - @sites.each do |site|
+    %tr
+      %td= site.name
+      %td= site.install_host
+      %td= site.install_path
+

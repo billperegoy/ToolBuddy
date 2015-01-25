@@ -11,12 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150124211057) do
+ActiveRecord::Schema.define(version: 20150124225954) do
+
+  create_table "installations", force: true do |t|
+    t.string   "state"
+    t.integer  "version_id"
+    t.integer  "site_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sites", force: true do |t|
+    t.string   "name"
+    t.string   "install_host"
+    t.string   "install_path"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tools", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "repository_path"
   end
 
   create_table "versions", force: true do |t|

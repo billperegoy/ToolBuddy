@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  install_host: MyString
+  install_path: MyString
+
+two:
+  name: MyString
+  install_host: MyString
+  install_path: MyString

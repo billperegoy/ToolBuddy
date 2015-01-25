@@ -5,5 +5,5 @@
         = tool.name 
   .panel-collapse.collapse{ id: "collapse-#{tool.id}", role: "tabpanel", 'aria-labelledby' => "heading-#{tool.id}" }
     .panel-body
-      = link_to 'add_version', new_tool_version_path(tool)
-      = render partial: 'version_table', locals: {versions: tool.versions}
+      = button_to 'add_version', new_tool_version_path(tool), method: 'get', class: 'btn btn-primary'
+      = render partial: 'version_table', locals: {tool: tool, versions: tool.versions}
