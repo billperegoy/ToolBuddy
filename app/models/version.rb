@@ -3,7 +3,7 @@ class Version < ActiveRecord::Base
   has_many :installations
 
   validates :name, presence: true
-  validates :name, uniqueness: true
+  validates :name, uniqueness: { scope: :tool }
   validates :name, format: { with: /\Av\d+\.\d+\.\d+\z/,
                              message: "must be of format v<num>.<num>.<num>" }
 
