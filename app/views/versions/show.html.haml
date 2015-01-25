@@ -1,25 +1,25 @@
-%h1 Version Information
+.container
+  %h1 Version Information
 
-%h3
-  Tool:
-  = @version.tool.name
+  %h3
+    Tool:
+    = @version.tool.name
 
-%h3
-  Name:
-  = @version.name
+  %h3
+    Name:
+    = @version.name
 
-%h3
-  Release Notes:
-  = @version.release_notes
+  %h3
+    Release Notes:
+    = @version.release_notes
 
-%p Installations
-%table.table.table-striped.table.border
-  %tr
-    %th Site
-    %th State
-  - @version.installations.each do |installation|
+  %table.table.table-striped.table.border
     %tr
-      %td= installation.site.name
-      %td= installation.state
+      %th Site
+      %th State
+    - @version.installations.each do |installation|
+      %tr
+        %td= installation.site.name
+        %td= installation.state
 
 

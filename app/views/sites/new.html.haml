@@ -1,14 +1,15 @@
-%h1 Create a new site
+.container
+  %h1 Create a new site
 
-= form_for(@site) do |f|
-  %p
-    = f.label :name
-    = f.text_field :name
-  %p
-    = f.label :install_host
-    = f.text_field :install_host
-  %p
-    = f.label :install_path
-    = f.text_field :install_path
-  %p
-    = f.submit
+  = form_for(@site) do |f|
+    %p
+      = f.label :name
+      = f.text_field :name
+    %p
+      = f.label :install_host
+      = f.text_field :install_host
+    %p
+      = f.label :install_path
+      = f.text_field :install_path
+    %p
+      = f.submit

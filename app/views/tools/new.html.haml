@@ -1,13 +1,14 @@
-%h1 Create a new tool
+.container
+  %h1 Create a new tool
 
-= form_for(@tool) do |f|
-  %p
-    = f.label :name
-    = f.text_field :name
-  %p
-    = f.label :repository_path
-    = f.text_field :repository_path
-  %p
-    = f.submit
+  = form_for(@tool) do |f|
+    %p
+      = f.label :name
+      = f.text_field :name
+    %p
+      = f.label :repository_path
+      = f.text_field :repository_path
+    %p
+      = f.submit
 
 

@@ -1,7 +1,4 @@
 .container
-  = button_to "Show Sites", sites_path, method: 'get', class: "btn btn-primary"
-  = button_to "Add Tool", new_tool_path, method: 'get', class: "btn btn-primary"
-  %br
   .panel-group#accordion{role: 'tablist',  'aria-multiselectable' => 'true'}
     - @tools.each do |tool|
       = render partial: 'single_tool', locals: {tool: tool}

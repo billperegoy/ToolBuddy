@@ -3,3 +3,9 @@
     %h1.text-center Tool Buddy
     %h2.text-center Your Tool Install Homie
 
+.container
+  .btn-group.main-menu
+    = link_to "Home", tools_path, method: 'get', class: "btn btn-default"
+    = link_to "Sites", sites_path, method: 'get', class: "btn btn-default"
+    = link_to "Add Site", new_site_path, method: 'get', class: "btn btn-default"
+    = link_to "Add Tool", new_tool_path, method: 'get', class: "btn btn-default"
