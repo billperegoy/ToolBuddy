@@ -1,5 +1,14 @@
-%h1 Create new tool version
+- if @version.errors.any?
+  .error_explanation
+    %h3
+      = pluralize(@version.errors.count, "error")
+      prohibited this article from being saved:
 
+    %ul
+    - @version.errors.full_messages.each do |msg|
+      %li= msg
+
+%h1 Create new tool version
 = form_for([@tool, @version]) do |f|
   %p
     = f.label :name
