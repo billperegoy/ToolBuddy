@@ -1,25 +1,32 @@
 .container
-  %h1 Version Information
 
-  %h3
-    Tool:
-    = @version.tool.name
+  .page-header
+    %h1 Version Information
 
-  %h3
-    Name:
-    = @version.name
+  .well.version-summary
+    %h3
+      Tool:
+      = @version.tool.name
 
-  %h3
-    Release Notes:
-    = @version.release_notes
+    %h3
+      Version:
+      = @version.name
+
+    %h3
+      Release Notes:
+      = @version.release_notes
 
   %table.table.table-striped.table.border
     %tr
       %th Site
       %th State
+      %th 
+        %button.btn-btn-default Install All
     - @version.installations.each do |installation|
       %tr
         %td= installation.site.name
         %td= installation.state
+        %td 
+          %button.btn-btn-default Install
 
 
