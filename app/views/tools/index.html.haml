@@ -1,4 +1,7 @@
 .container
+  .page-header
+    %h1 All Tools
+    %h4 (click any tool to see versions)
   .panel-group#accordion{role: 'tablist',  'aria-multiselectable' => 'true'}
     - @tools.each do |tool|
       = render partial: 'single_tool', locals: {tool: tool}

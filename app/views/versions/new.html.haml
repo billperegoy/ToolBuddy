@@ -1,20 +1,23 @@
-- if @version.errors.any?
-  .error_explanation
-    %h3
-      = pluralize(@version.errors.count, "error")
-      prohibited this article from being saved:
+.container
+  .page-header
+    %h1 New Tool Version
 
-    %ul
-    - @version.errors.full_messages.each do |msg|
-      %li= msg
+  - if @version.errors.any?
+    .error_explanation
+      %h3
+        = pluralize(@version.errors.count, "error")
+        prohibited this article from being saved:
 
-%h1 Create new tool version
-= form_for([@tool, @version]) do |f|
-  %p
-    = f.label :name
-    = f.text_field :name
-  %p
-    = f.label :release_notes
-    = f.text_area :release_notes
-  %p
-    = f.submit
+      %ul
+      - @version.errors.full_messages.each do |msg|
+        %li= msg
+
+  = form_for([@tool, @version]) do |f|
+    %p
+      = f.label :name
+      = f.text_field :name
+    %p
+      = f.label :release_notes
+      = f.text_area :release_notes
+    %p
+      = f.submit
