@@ -1,4 +1,10 @@
 class Site < ActiveRecord::Base
+  validates :name, presence: true
+  validates :name, uniqueness: true
+
+  validates :install_host, presence: true
+  validates :install_path, presence: true
+
   after_save :create_empty_installations, on: [ :create ]
 
   protected

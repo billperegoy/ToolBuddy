@@ -2,16 +2,7 @@
   .page-header
     %h1 New Tool Version
 
-  - if @version.errors.any?
-    .error_explanation
-      %h3
-        = pluralize(@version.errors.count, "error")
-        prohibited this article from being saved:
-
-      %ul
-      - @version.errors.full_messages.each do |msg|
-        %li= msg
-
+  = render partial: 'common/form_errors', locals: {object: @version}
   = form_for([@tool, @version]) do |f|
     %p
       = f.label :name

@@ -2,6 +2,7 @@
   .page-header
     %h1 Create a new tool
 
+  = render partial: 'common/form_errors', locals: {object: @tool}
   = form_for(@tool) do |f|
     %p
       = f.label :name
