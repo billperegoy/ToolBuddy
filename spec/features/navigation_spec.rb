@@ -97,6 +97,7 @@ feature "Can naviagte to tools and versions" do
   end
 
   scenario "Clicking an install button should result in the button text changing to installed" do
+
     pending "Still debugging"
     visit "/tools"
     click_link "v1.0.0"
