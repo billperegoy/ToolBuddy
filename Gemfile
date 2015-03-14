@@ -17,6 +17,11 @@ gem 'coffee-rails', '~> 4.0.0'
 gem "twitter-bootstrap-rails"
 gem "haml", '3.1.4'
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+  gem 'capybara'
+end
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

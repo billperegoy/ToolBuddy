@@ -21,12 +21,12 @@
       %th Site
       %th State
       %th 
-        %button.btn-btn-default Install All
+        %button.btn-btn-default.install-all Install All
     - @version.installations.each do |installation|
       %tr
         %td= installation.site.name
         %td= installation.state
         %td 
-          %button.btn-btn-default Install
+          %button.btn-btn-default.install-one Install
 
 
