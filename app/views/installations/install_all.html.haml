@@ -1,0 +1,7 @@
+%h1 Installing at all sites
+%h2 Tool: #{@tool.name}
+%h2 Version: #{@version.name}
+%h2 Installations:
+%ul
+  - @installations.each do |installation|
+    %li #{installation.site.name}
