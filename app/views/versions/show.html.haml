@@ -23,12 +23,16 @@
       %th
         = button_to "Install All",
           tool_install_all_path(version_id: @version.id),
-          class: "btn btn-default install-all"
+          class: "btn btn-default install-all",
+          remote: true
     - @version.installations.each do |installation|
       %tr
         %td= installation.site.name
-        %td= installation.state
+        %td{ id: "state-#{installation.id}"}
+          = installation.state
         %td
           = button_to "Install", 
             tool_install_one_path(id: installation.id, version_id: @version.id),
-            class: "btn btn-default install-one"
+            class: "btn btn-default",
+            id: "install-#{installation.id}",
+            remote: true

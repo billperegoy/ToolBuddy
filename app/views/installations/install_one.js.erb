@@ -1,0 +1,6 @@
+var current_state_value = $("#state-<%= @installation.id %>").text().trim();
+var new_state_value = (current_state_value == 'installed') ? 'uninstalled' : 'installed';
+var new_button_value = (current_state_value == 'installed') ? 'Install' : 'Remove';
+$("#state-<%= @installation.id %>").html(new_state_value);
+$("#install-<%= @installation.id %>").prop('value', new_button_value);
+

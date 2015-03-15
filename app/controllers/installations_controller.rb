@@ -5,10 +5,11 @@ class InstallationsController < ApplicationController
     @installation = Installation.find(params[:id])
 
     # FIXME - This is where I do the actual install
-    #         Currently I render a view here but this
-    #         shpuld start the installa and redirect.
+ 
+    respond_to do |format|
+      format.js {}
+    end
 
-    # redirect_to_version_page
   end
 
   def install_all
@@ -17,16 +18,10 @@ class InstallationsController < ApplicationController
     @installations = @version.installations
 
     # FIXME - This is where I do the actual install
-    #         Currently I render a view here but this
-    #         shpuld start the installa and redirect.
-    #
-    # redirect_to_version_page
-  end
 
-  private
-  def redirect_to_version_page
-    redirect_to tool_version_path(
-      tool_id: @tool_id,
-      id: @version_id)
+    respond_to do |format|
+      format.js {}
+    end
+
   end
 end
